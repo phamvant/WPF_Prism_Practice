@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_Prism_Practice.View
+namespace WPF_Prism_Practice.Views
 {
     /// <summary>
     /// Interaction logic for ViewB.xaml

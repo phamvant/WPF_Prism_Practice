@@ -24,7 +24,6 @@ namespace WPF_Prism_Practice.Views
         public ViewA()
         {
             InitializeComponent();
-            DataContext = new ViewAViewModel();
         }
     }
 }
