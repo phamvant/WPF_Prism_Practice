@@ -9,6 +9,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Button Content="{Binding ButtonContent}"
+                Width="200"
+                Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="#FF4CAF50"
+                Foreground="White"
+                BorderBrush="#FF388E3C"
+                BorderThickness="2">
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="3"
+                                  Color="#33000000"
+                                  Opacity="0.8"
+                                  BlurRadius="5"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </UserControl>

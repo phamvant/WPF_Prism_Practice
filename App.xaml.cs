@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using WPF_Prism_Practice.ViewModels;
 using WPF_Prism_Practice.Views;
 
 namespace WPF_Prism_Practice
@@ -21,6 +22,7 @@ namespace WPF_Prism_Practice
         {
             containerRegistry.RegisterForNavigation<Views.ViewA>();
             containerRegistry.RegisterForNavigation<Views.ViewB>();
+            containerRegistry.RegisterDialog<Views.ViewC>();
         }
     }
 

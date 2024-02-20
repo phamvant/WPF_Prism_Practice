@@ -1,4 +1,5 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WPF_Prism_Practice.Event;
 
 namespace WPF_Prism_Practice.ViewModels
 {
@@ -38,10 +40,13 @@ namespace WPF_Prism_Practice.ViewModels
             }
         }
 
+        private IEventAggregator _eventAggregator { get; set; }
+
         public ICommand UpdateCommand { get; set; }
 
-        public ViewAViewModel()
+        public ViewAViewModel(IEventAggregator eventAggregator)
         {
+            _eventAggregator = eventAggregator;
             UpdateCommand = new DelegateCommand(Execute, CanExecute).ObservesProperty(() => FirstName).ObservesProperty(() => LastName);
         }
 
@@ -53,6 +58,7 @@ namespace WPF_Prism_Practice.ViewModels
         private void Execute()
         {
             LastUpdated = DateTime.Now;
+            _eventAggregator.GetEvent<UpdateEvent>().Publish(LastUpdated.ToString());
         }
     }
 }
